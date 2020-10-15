@@ -1,0 +1,491 @@
+
+/* organisation du code : 
+    1. La version mobile
+        a) le général 
+            - visibilité contenu
+            - le texte
+            - les bordures et couleurs
+            - la flexbox
+            - le menu burger
+        b) la page d'accueil
+            - l'en-tête
+            - le contenu
+            - le footer (prévoir un bouton retour en haut)
+        c) la page présentation
+            - l'en-tête
+            - le contenu
+            - le footer (prévoir un bouton retour en haut)
+
+    2. la version tablette
+        a) visibilité du contenu
+        b) flexbox
+    
+    3. La version bureau
+        a) visibilité du contenu
+        b) flexbox
+        c) dynamique des liens 
+
+prévoir un seuil pour les gros ordi bureau et les petits... le seuil tablette est trop grand
+*/
+
+
+/***** mobile first *****/
+
+    /***Mise en page générale ***/
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+        /* visibilité du contenu */
+@media screen and (max-width:770px) {
+    .gros_blabla {
+        display: none;
+    }
+    .petit_blabla {
+        font-size: 1rem;
+    }
+
+}
+
+        /* Le texte  */
+h1 {
+    font-family: fantasy;
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+}
+
+        /* Bordures et couleurs */                      /* voir pour modifier le rendu plus tard en fonction du contenu*/
+
+.competences:nth-child(1), .projets:nth-child(1)  {
+    border: 3px solid rgba(16, 166, 235, 0.548);
+    background-color: rgba(86, 86, 87, 0.575);
+}
+
+.competences:nth-child(2), .projets:nth-child(2) {
+    border: 3px solid rgba(132, 14, 228, 0.493);
+    background-color: rgba(86, 86, 87, 0.575);
+}
+
+.competences:nth-child(3), .projets:nth-child(3) {
+    border: 3px solid rgba(241, 19, 174, 0.507);
+    background-color: rgba(86, 86, 87, 0.575)
+}
+
+#titre_bleu, #titre_bleu a {
+    color: rgba(12, 143, 204, 0.548);
+
+}
+
+#titre_violet, #titre_violet a {
+    color: rgba(132, 14, 228, 0.493);
+
+}
+
+#titre_rose, #titre_rose a {
+    color: rgba(241, 19, 174, 0.507);
+
+}
+        
+        /* Flexbox */
+
+@media screen and (max-width:770px) {
+    .visuel, .realisations,.skills, .competences {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .realisations, .bloc_presentation, .skills, .competences {
+        align-items: center;
+        text-align: center;
+    }
+}        
+
+
+
+        /* menu burger pour smartphones et tablettes */
+
+@media screen and (max-width:1200px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        list-style-type: none;
+    }
+    
+    nav li
+    {
+        margin-right: 15px;
+        color: rgba(180, 77, 206, 0.767); 
+        font-family: fantasy;
+        font-size: 1.6em;  
+    }
+    
+    nav ul li a {
+        color: rgb(180, 77, 206, 0.767);
+        display: block;
+        border: 3px solid rgba(255, 255, 255, 0.226);
+        border-radius: 8px;
+        padding: 0.5rem;
+    }
+    
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 60px;
+    }
+    
+    .burger a {              
+        display: block;
+    }
+    
+    .menu:target {         
+        display: block;
+    }
+    
+    .burger {
+        width: calc(3*18px);
+        height: auto;
+        border: 3px solid rgba(255, 255, 255, 0.226);
+        border-radius: 8px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .bottom {
+        display: block;
+        border-bottom: 3px solid rgba(255, 255, 255, 0.226);
+        border-radius: 30%;
+        width: 75%;
+        margin: auto;
+        padding: 0;
+        height: 12px;
+    }
+    
+    .bottom:last-child {
+        margin-bottom: 12px;
+    }
+    
+    .fermer_menu {
+        background-color: rgb(7, 7, 7);
+        border: 5px solid rgb(7, 7, 7);
+        text-align: center;
+        margin: 0;
+        top: 10px;
+    }
+    
+    .fermer_menu:target {
+        display: none;
+    }
+}
+
+
+    /*** Page accueil ***/
+
+        /* Header */
+
+header {
+    background: rgba(7, 7, 7, 0.877);
+}
+
+.accroche, .img_accueil {
+    margin: 0.5rem;
+    width: 75%;
+}
+
+.accroche {
+    font-family: fantasy;
+    font-size: 4rem; 
+    color: rgba(255, 255, 255, 0.226); 
+    text-align: center;
+}
+
+.img_accueil {
+    text-align: right;
+}
+.menu_responsive {
+    margin-bottom: 0.5rem;
+}
+
+        /* Contenu : Projets */
+
+@media screen and (max-width:770px) {
+    .projets {
+        margin: 3%;
+        padding: 3%;
+    }
+}
+
+
+.projets p {
+    text-align: justify;
+}
+
+
+
+    /*** Page présentation ***/
+
+        /* header et footer  */
+
+
+@media screen and (max-width:770px) {
+    .titre_presentation, .ma_licorne {
+        color: rgba(255, 255, 255, 0.226);
+        padding: 5%;
+    }
+}
+
+.titre_presentation, .ma_licorne {
+    color: rgba(255, 255, 255, 0.226);
+}
+        
+
+
+/* prévoir de pouvoir cliquer sur le nom pour obtenir le CV en pdf (avec photo) */
+
+        /* contenu : skills */
+
+@media screen and (max-width:770px) {
+    .presentation_picture {
+        display: none;
+    }
+
+    .competences {
+        height: 20rem;
+        width: 50%;
+        min-width: 25rem;
+    }
+
+    .skills {
+        margin: 5%;
+    }
+
+    .competences:nth-child(1), .competences:nth-child(2) {
+        margin-bottom: 2%;
+    }
+}
+
+.skills, .competences {
+    justify-content: space-evenly;
+}
+
+
+.competences ul {
+    list-style-type: none;
+}
+
+/* 
+box compétence : 
+- prévoir un lien sur les images compétences pour avoir un rendu élargi 
+    et supprimer les texte en dessous de l'image 
+*/
+
+
+        /* footer */
+
+
+.ma_licorne {
+    background: rgba(7, 7, 7, 0.877);
+
+}
+
+/***** tablettes *****/
+
+    /*** Mise en page générale ***/
+
+        /* visibilité du contenu */
+@media screen and (max-width:1200px) {
+    .gros_blabla {
+        font-size: 1rem;
+    }
+    .petit_blabla, .presentation_picture, .blabla_desktop {
+        display: none;
+    }
+
+}
+
+        /* Flexbox */
+
+@media screen and (max-width:1200px) {
+    .realisations,.skills {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    .visuel, .competences {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .visuel {
+        margin-bottom: 1%;
+    }
+    
+    .ma_licorne {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-top: 1%;
+    }
+
+    .projets {
+        height: 22rem;
+    }
+
+    .competences {
+        height: 16rem;
+    }
+    
+}        
+
+.competences, .projets {
+    width: 28%;
+    overflow: auto;
+    word-wrap: auto;
+    text-align: center;
+    padding: 0.5%;
+    margin: 1% 0 1% 0;
+}
+
+.realisations {
+    flex-wrap: wrap;
+}
+
+.bloc_presentation {
+    text-align: center;
+}
+
+.competences {
+    align-items: center;
+}
+
+
+
+/***** desktop *****/
+
+    /*** Mise en page générale ***/
+
+        /* visibilité du contenu */
+
+@media screen and (min-width:1201px) {
+
+    .presentation_picture {
+        display: flex;
+        flex-direction: column;
+        width: 12%;
+        min-width: 150px;
+        max-width: 180px;
+    }
+
+    .blabla_desktop  {
+        font-size: 1rem;
+    }
+
+    .petit_blabla {
+        display: none;
+    }
+
+}
+        
+
+        /* Flexbox */
+@media screen and (min-width:1201px) {
+    .visuel, .realisations, .skills, .bloc_page_presentation, .titre_presentation, .presentation_picture {
+        display: flex;
+    }
+    
+    .skills, .realisations {
+        justify-content: space-around;
+        align-items: center;
+        height: 200px;
+    }
+
+    .visuel {
+        justify-content: space-between;
+        height: 25%;
+        padding: 0 6% 0 2%;
+    }
+
+    .bloc_page_presentation {
+        justify-content: space-between;
+    }
+    
+    .bloc_presentation {
+        width: 70%;
+        justify-content: space-around;
+        flex: 1;
+    }
+   
+    .titre_presentation {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    .titre_presentation p {
+        width: 70%;
+        text-align: center;
+        font-style:  italic;
+        
+    }
+    
+    .skills {
+        margin: 9% 0 9% 0;
+    }
+
+} 
+
+    /*** En-tête et footer ***/
+
+@media screen and (min-width:1201px) {
+    .accueil, .ma_licorne, .titre_presentation {
+        background: linear-gradient(-45deg, #888888, #5c5c5c, #353535, #050505);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+        
+    @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+    }
+    
+}
+
+    
+
+
+
+        /* Dynamique des liens */
+
+nav a:hover, .projets a:hover {
+    color: rgba(137, 43, 226, 0.596);
+    border-left: 0.5px groove rgb(92, 4, 173);
+    font-size: 105%;
+}
+
+#projet_bleu a {
+    color: rgb(180, 77, 206, 0.767);
+}
+        
