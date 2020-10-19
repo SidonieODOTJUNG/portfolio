@@ -38,13 +38,17 @@ ce qu'il me reste à mettre en place :
 
         1. au niveau de la page présentation 
             a) prévoir de pouvoir cliquer sur le nom pour obtenir le CV en pdf (avec photo) 
-            b) après envoie formulaire  : prévoir la possibilité de télécharger le CV + message de bon envoie du formulaire 
+            b) après envoie formulaire  : prévoir la possibilité de télécharger le CV (parcours version page imprimable) + message de bon envoie du formulaire 
         2. au niveau du formulaire
             a) formulaire en mode pop-up (JS)
             b) faire le lien avec le concept inversé de d'offre d'emploi
         3. au niveau du contenu
             a) trouver une solution pour faire le lien avec la lettre à la licorne de linked'In
             b) ajouter des boutons via linked'in voire des slides sur mes postes ou articles (JS)
+       4. la niveau de la page parcours
+        a) trouver une présentation dynamique pour relater mon parcours pro
+        b) trouver une place pour les passions
+        c) faire une version de cette page imprimable (style CV)
 
 */
 
@@ -583,13 +587,13 @@ box compétence :
     
         /* Dynamique des liens */
 
-nav a:hover, .projets a:hover {
+nav a:hover, .projets a:hover, .lien_CV a:hover {
     color: rgba(137, 43, 226, 0.596);
     border-left: 0.5px groove rgb(92, 4, 173);
     font-size: 105%;
 }
 
-#projet_bleu a {
+#projet_bleu a, .lien_CV a {
     color: rgb(180, 77, 206, 0.767);
 }
   
@@ -659,3 +663,10 @@ legend {
     border-radius: 0.5rem;
 }
 
+/***** Page parcours pour le TP2 *****/
+
+.lien_CV {
+    font-size: 4vw;
+    text-align: center;
+    font-family: fantasy;
+}
