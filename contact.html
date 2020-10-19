@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head> 
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style_mobilefirst_site.css"/>
+        <title>Sidonie ODOT JUNG</title> 
+    </head>
+    <body> 
+        <div class="bloc_page_presentation">
+<!-- pas de menu car je prévois de faire une fenêtre pop-up pour le formulaire, il me faudra juste la possibilité pour l'utilisateur de fermer 
+    sans envoie du formulaire s'il le souhaite ou bien que la fenêtre ne s'active que sur demande de l'utilisateur -->
+
+            <div class="presentation_picture rappel_presentation">
+                <img src="img_cv/photo_mini_Sido.jpg" class="PhotoCV" alt="Photo Sidonie ODOT JUNG">                
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Laboriosam dignissimos distinctio beatae architecto quibusdam excepturi aliquam 
+                    eligendi voluptatem repellat sunt facilis neque reprehenderit voluptates quod voluptas deserunt, 
+                    placeat temporibus laborum.
+                </p>
+            </div>
+
+            <div class="bloc_presentation bloc_page_form">
+
+                <header class="visuel header_form">   
+                    <div>
+                                <h1>Sidonie ODOT JUNG</h1>
+                                <h2>Développeur WEB</h2>
+                                <h3>Spécialisée en truc muche</h3>                                   
+                    </div>
+                </header>
+                
+                <section class="formulaire">
+                    
+                    <h2>Votre offre d'emploi</h2>
+                    <p class="centrer_txt">Remplir les champs ci-dessous le plus précisemment possible.</p>
+                    
+                    <form method="post" action="traitement.php">               
+                        
+                        <div>
+                            <fieldset>
+    
+                                <legend>Entrez vos coordonnées </legend>
+                                
+                                <p>
+                                    <label for="entreprise" class="gras">Quel le nom de votre société ?</label>
+                                    <input type="text" name="entreprise" id="entreprise"/>
+                                </p>
+    
+                                <p>
+                                    <label for="nom" class="gras">Quel est votre nom ?</label>
+                                    <input type="text" name="nom" id="nom"/>
+                                </p>
+        
+                                <p>
+                                    <label for="prenom" class="gras">Quel est votre prénom ?</label>
+                                    <input type="text" name="prenom" id="prenom"/>
+                                </p>
+    
+                                <p>
+                                    <label for="recruteur" class="gras">Quel est votre statut dans l'entreprise ?</label>
+                                    <input type="text" name="recruteur" id="recruteur"/>
+                                </p>
+        
+                                <p>
+                                    <label for="email" class="gras">Quel est votre e-mail ?</label>
+                                    <input type="email" name="email" id="email"/>
+                                </p>
+        
+                                <p>
+                                    <label for="tel" class="gras">A quel numéro puis-je vous joindre ?</label>
+                                    <input type="tel" name="tel" id="tel"/>
+                                </p>
+    
+                            </fieldset>
+                        </div>
+
+                        <div>
+                            <fieldset>
+    
+                                <legend> Descriptif du poste </legend>
+     
+                                <p>
+                                    <span class="gras">Le poste se situe dans quelle(s) ville(s) ? </span> <br>       
+                                    <input type="checkbox" name="ville" value="Avignon" /> Avignon <br>
+                                    <input type="checkbox" name="ville" value="Cavaillon" /> Cavaillon <br>
+                                    <input type="checkbox" name="ville" value="Marseille" /> Marseille <br>
+                                    <input type="checkbox" name="ville" value="Aix" /> Aix-en-Provence <br>
+                                </p>
+    
+                                <p>
+                                    <label for="remote" class="gras">Cochez cette case, si le full remote est d'usage dans l'entreprise </label>         
+                                    <input type="checkbox" name="remote" id="remote"/>  
+                                </p>
+    
+                                <p>
+                                    <label for="poste" class="gras">Quel est le poste proposé ? </label>
+                                    <input type="text" name="poste" id="poste"/>
+                                </p>
+
+                                <p>
+                                    <label for="date" class="gras">Pour quand ? </label>
+                                    <input type="date" name="date" id="date"/>   
+                                </p>
+    
+                                <p>
+                                    <span class="gras">Quel est le niveau souhaité pour ces compétences ? </span> <br>
+                                    <input type="checkbox" name="skills" value="HTML CSS"/> HTML/CSS
+                                    <input type="text" name="Niveau HTML CSS" id="Niveau_HTML_CSS"/> <br>
+                                    <input type="checkbox" name="skills" value="Javascript"/> Javascript
+                                    <input type="text" name="Niveau JS" id="Niveau_JS"/> <br>
+                                    <input type="checkbox" name="skills" value="Python"/> Python
+                                    <input type="text" name="Niveau Python" id="Niveau_Python"/> <br>
+                                    <input type="checkbox" name="skills" value="PHP"/> PHP
+                                    <input type="text" name="Niveau PHP" id="Niveau_PHP"/> <br>
+                                    <input type="checkbox" name="skills" value="Django"/> Django
+                                    <input type="text" name="Niveau Django" id="Niveau_Django"/> <br>
+                                    <input type="checkbox" name="skills" value="Framework"/> Framework
+                                    <input type="text" name="Niveau Framework" id="Niveau_Framework"/> <br>
+                                    Si oui, lequel ? 
+                                    <input type="text" name="Quel framework" id="Quel_framework"/> <br>
+                                    <input type="checkbox" name="skills" value="Gestion Projet"/> Gestion de projet
+                                    <input type="text" name="Niveau gestion de projet" id="Niveau_gestion_projet"/> <br>
+    
+                                </p>
+    
+                                <p>
+                                    <label for="missions" class="gras">Décrivez succintement les missions du poste : </label> <br>
+                                    <textarea name="missions" id="missions" cols="50" rows="10"></textarea>  
+                                </p>
+        
+                                <p>
+                                    <span class="gras">Dans quelle tranche de salaire vous situez-vous? </span> <br>
+                                    <input type="radio" name="salaire" value="-de25k" id="-de25k">
+                                    <label for="-de25k">Moins de 24999€ / an</label><br/>
+                                    <input type="radio" name="salaire" value="25-30k" id="25-30k">
+                                    <label for="25-30k">Entre 25000€ et 29999€ / an </label><br/>
+                                    <input type="radio" name="salaire" value="30-35K" id="30-35K">
+                                    <label for="30-35K">Entre 30000€ et 34999€ / an</label><br/>
+                                    <input type="radio" name="salaire" value="35-40k" id="35-40k">
+                                    <label for="35-40k">Entre 35000€ et 39999€ / an</label><br/>
+                                    <input type="radio" name="salaire" value="40-45k" id="40-45k">
+                                    <label for="40-45k">Entre 40000€ et 44999€ / an</label> <br>
+                                    <input type="radio" name="salaire" value="+de45k" id="+de45k">
+                                    <label for="+de45k">Plus de 45000€ / an</label>
+                                </p>
+
+                                <p>
+                                    <label for="Avantages-sociaux" class="gras">Quels avantages sociaux proposez-vous ? </label> <br>
+                                    <textarea name="Avantages-sociaux" id="Avantages-sociaux" cols="50" rows="10"></textarea>
+                                </p>
+
+                            </fieldset> 
+                        </div>
+                            
+                        <div class="envoi_formulaire">
+                            <input type="submit" value="Clic, clic. SVP!" class="magic_bottom gras"/>
+                        </div>
+
+                    </form> 
+                </section>
+            </div>
+
+            
+            
+
+
+
+            
+        </div>
+    </body>
+</html>
+

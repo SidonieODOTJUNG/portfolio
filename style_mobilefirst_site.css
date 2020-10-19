@@ -24,8 +24,28 @@
         a) visibilité du contenu
         b) flexbox
         c) dynamique des liens 
+    
+    4. le formulaire
+        a) version smartphone + tablette
 
-prévoir un seuil pour les gros ordi bureau et les petits... le seuil tablette est trop grand
+*/
+
+
+/*  
+Commentaire perso
+
+ce qu'il me reste à mettre en place : 
+
+        1. au niveau de la page présentation 
+            a) prévoir de pouvoir cliquer sur le nom pour obtenir le CV en pdf (avec photo) 
+            b) après envoie formulaire  : prévoir la possibilité de télécharger le CV + message de bon envoie du formulaire 
+        2. au niveau du formulaire
+            a) formulaire en mode pop-up (JS)
+            b) faire le lien avec le concept inversé de d'offre d'emploi
+        3. au niveau du contenu
+            a) trouver une solution pour faire le lien avec la lettre à la licorne de linked'In
+            b) ajouter des boutons via linked'in voire des slides sur mes postes ou articles (JS)
+
 */
 
 
@@ -54,7 +74,21 @@ body {
         /* Le texte  */
 h1 {
     font-family: fantasy;
-    font-size: 1.5rem;
+    font-size: 4vw;
+    margin: 1vw;
+}
+
+h2, h3 {
+    margin: 1vw;
+}
+
+
+h2 {
+    font-size: 3vw;
+}
+
+h3 {
+    font-size: 2vw;
 }
 
 a {
@@ -64,6 +98,7 @@ a {
 p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
+    text-align: justify;
 }
 
         /* Bordures et couleurs */                      /* voir pour modifier le rendu plus tard en fonction du contenu*/
@@ -85,23 +120,29 @@ p {
 
 #titre_bleu, #titre_bleu a {
     color: rgba(12, 143, 204, 0.548);
+    font-family: fantasy;
+    font-size: 2rem;
 
 }
 
 #titre_violet, #titre_violet a {
     color: rgba(132, 14, 228, 0.493);
+    font-family: fantasy;
+    font-size: 2rem;
 
 }
 
 #titre_rose, #titre_rose a {
     color: rgba(241, 19, 174, 0.507);
+    font-family: fantasy;
+    font-size: 2rem;
 
 }
         
         /* Flexbox */
 
 @media screen and (max-width:770px) {
-    .visuel, .realisations,.skills, .competences {
+    .visuel, .realisations, .projets, .skills, .competences {
         display: flex;
         flex-direction: column;
     }
@@ -110,17 +151,14 @@ p {
         align-items: center;
         text-align: center;
     }
+
 }        
 
 
 
         /* menu burger pour smartphones et tablettes */
 
-@media screen and (max-width:1200px) {
-    nav {
-        display: flex;
-        flex-direction: column;
-    }
+@media screen and (max-width:1023px) {
     
     nav ul li {
         list-style-type: none;
@@ -199,41 +237,51 @@ p {
 
         /* Header */
 
-header {
-    background: rgba(7, 7, 7, 0.877);
-}
 
-.accroche, .img_accueil {
-    margin: 0.5rem;
-    width: 75%;
-}
 
 .accroche {
-    font-family: fantasy;
-    font-size: 4rem; 
     color: rgba(255, 255, 255, 0.226); 
-    text-align: center;
+
 }
 
-.img_accueil {
-    text-align: right;
-}
-.menu_responsive {
-    margin-bottom: 0.5rem;
-}
+@media screen and (max-width:1023px) {
+    header {
+        background: rgba(7, 7, 7, 0.877);
+    }
 
-        /* Contenu : Projets */
+    .accroche {
+        text-align: left;
+        font-size: 5vw; 
+    }
 
-@media screen and (max-width:770px) {
-    .projets {
-        margin: 3%;
-        padding: 3%;
+    .img_accueil {
+        text-align: left;
+    }
+
+    .accroche, .img_accueil {
+        padding-left: 3vw;
+    }
+
+    .menu_responsive {
+        margin-bottom: 0.5rem;
     }
 }
 
 
+
+
+        /* Contenu : Projets */
+
+@media screen and (max-width:770px) {
+.projets {
+    width: 90%;
+    margin-top: 5%;
+}
+
+}
+
 .projets p {
-    text-align: justify;
+    padding: 2%;
 }
 
 
@@ -245,7 +293,6 @@ header {
 
 @media screen and (max-width:770px) {
     .titre_presentation, .ma_licorne {
-        color: rgba(255, 255, 255, 0.226);
         padding: 5%;
     }
 }
@@ -309,7 +356,7 @@ box compétence :
     /*** Mise en page générale ***/
 
         /* visibilité du contenu */
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1023px) {
     .gros_blabla {
         font-size: 1rem;
     }
@@ -321,7 +368,7 @@ box compétence :
 
         /* Flexbox */
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1023px) and (min-width: 771px) {
     .realisations,.skills {
         display: flex;
         justify-content: space-evenly;
@@ -351,29 +398,34 @@ box compétence :
     .competences {
         height: 16rem;
     }
+
+    .competences, .projets {
+        width: 28%;
+        overflow: auto;
+        word-wrap: auto;
+        text-align: center;
+        padding: 0.5%;
+        margin: 1% 0 1% 0;
+    }
+    
+    .realisations {
+        flex-wrap: wrap;
+    }
+    
+    .bloc_presentation {
+        text-align: center;
+    }
+    
+    .competences {
+        align-items: center;
+    }
+
+    .titre_presentation, .ma_licorne {
+        color: rgba(255, 255, 255, 0.226);
+        padding: 0 5% 0 5%;
+    }
     
 }        
-
-.competences, .projets {
-    width: 28%;
-    overflow: auto;
-    word-wrap: auto;
-    text-align: center;
-    padding: 0.5%;
-    margin: 1% 0 1% 0;
-}
-
-.realisations {
-    flex-wrap: wrap;
-}
-
-.bloc_presentation {
-    text-align: center;
-}
-
-.competences {
-    align-items: center;
-}
 
 
 
@@ -383,7 +435,7 @@ box compétence :
 
         /* visibilité du contenu */
 
-@media screen and (min-width:1201px) {
+@media screen and (min-width:1024px) {
 
     .presentation_picture {
         display: flex;
@@ -405,55 +457,77 @@ box compétence :
         
 
         /* Flexbox */
-@media screen and (min-width:1201px) {
-    .visuel, .realisations, .skills, .bloc_page_presentation, .titre_presentation, .presentation_picture {
-        display: flex;
-    }
-    
-    .skills, .realisations {
-        justify-content: space-around;
-        align-items: center;
-        height: 200px;
+@media screen and (min-width:1024px) {
+    .visuel, .realisations, .projets, .bloc_page_presentation, .presentation_picture, .titre_presentation, .header_presentation, .skills, .ma_licorne, .competences {
+            display: flex;
     }
 
-    .visuel {
-        justify-content: space-between;
-        height: 25%;
-        padding: 0 6% 0 2%;
-    }
-
-    .bloc_page_presentation {
-        justify-content: space-between;
-    }
-    
-    .bloc_presentation {
-        width: 70%;
-        justify-content: space-around;
-        flex: 1;
-    }
-   
-    .titre_presentation {
-        flex-wrap: wrap;
+    .visuel, .realisations, .ma_licorne, .competences {
         justify-content: space-evenly;
     }
-    
-    .titre_presentation p {
-        width: 70%;
-        text-align: center;
-        font-style:  italic;
-        
+
+    .titre_presentation, .bloc_page_presentation {
+        justify-content: space-between;
     }
-    
-    .skills {
-        margin: 9% 0 9% 0;
+        
+    .projets, .competences, .presentation_picture, .header_presentation, .ma_licorne {
+        flex-direction: column;
+    }
+
+    .titre_presentation {
+        flex-wrap: wrap;
+    }
+
+    .header_presentation {
+        padding: 0;
+    }
+
+    .competences, .projets {
+        width: 28%;
+        overflow: auto;
+        word-wrap: auto;
+        text-align: center;
+        padding: 0.5%;
+        margin: 1% 0 1% 0;
+    }
+
+    .realisations {
+        flex-wrap: wrap;
+    }
+
+    .bloc_presentation {
+        text-align: center;
+        width: 85%;
+    }
+
+    .competences {
+        align-items: center;
+    }
+
+    .titre_presentation p, .ma_licorne p {
+        padding: 0 5% 0 5%;
+        font-style:  italic;        
+    }
+
+    .presentation_picture {
+        margin: auto;
+    }
+    .PhotoCV {
+        height: auto;
+        min-width: 150px;
+        max-width: 180px;
+    }
+
+    .header_presentation {
+        margin: auto;
     }
 
 } 
 
     /*** En-tête et footer ***/
 
-@media screen and (min-width:1201px) {
-    .accueil, .ma_licorne, .titre_presentation {
+@media screen and (min-width:1024px) {
+    .accueil, .visuel, .ma_licorne, .titre_presentation, .envoi_formulaire  {
         background: linear-gradient(-45deg, #888888, #5c5c5c, #353535, #050505);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
@@ -473,10 +547,40 @@ box compétence :
     
 }
 
+    /* menu */
+
+@media screen and (min-width:1024px) {
+    nav {
+        justify-content: flex-end;
+    }
     
+    nav ul {
+        display: flex;
+    }
+    nav ul li {
+        list-style-type: none;
+    }
+    
+    nav li {
+        color: rgba(180, 77, 206, 0.767); 
+        font-family: fantasy;
+        font-size: 1.6em;  
+    }
+    
+    nav ul li a {
+        color: rgb(180, 77, 206, 0.767);
+        display: block;
+        border: 3px solid rgba(255, 255, 255, 0.226);
+        border-radius: 8px;
+        padding: 0.5rem;
+    }
 
+    .fermer_menu {
+        display: none;
+    }
 
-
+}
+    
         /* Dynamique des liens */
 
 nav a:hover, .projets a:hover {
@@ -488,4 +592,70 @@ nav a:hover, .projets a:hover {
 #projet_bleu a {
     color: rgb(180, 77, 206, 0.767);
 }
-        
+  
+
+/***** page formulaire *****/
+
+    /*** le formulaire ***/
+
+@media screen and (max-width:1023px) {
+    .bloc_page_form {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .rappel_presentation {
+        position: fixed;
+        margin-left: 1vw;
+    }
+    
+    .bloc_page_form {
+        margin-left: 15%;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulaire h2 {
+    font-family: fantasy;
+    font-size: 2.5rem;
+}
+legend {
+    font-size: 2rem;
+    font-family: fantasy;
+}
+
+.gras {
+    font-weight: bold;
+}
+
+.centrer_txt {
+    text-align: center;
+    font-style: italic;
+}
+
+.header_form {
+    color:  rgba(255, 255, 255, 0.226); 
+}
+
+.header_form h1 {
+    color: rgba(137, 43, 226, 0.596);
+}
+
+
+.envoi_formulaire {
+    padding: 2rem;
+}
+
+.magic_bottom {
+    background-color:  rgba(137, 43, 226, 0.596);
+    font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
