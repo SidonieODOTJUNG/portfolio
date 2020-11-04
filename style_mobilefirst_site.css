@@ -28,6 +28,8 @@
     4. le formulaire
         a) version smartphone + tablette
 
+    5. la page parcours (juste CV pdf pour le TP2 actuellement)
+
 */
 
 
@@ -46,9 +48,9 @@ ce qu'il me reste à mettre en place :
             a) trouver une solution pour faire le lien avec la lettre à la licorne de linked'In
             b) ajouter des boutons via linked'in voire des slides sur mes postes ou articles (JS)
        4. la niveau de la page parcours
-        a) trouver une présentation dynamique pour relater mon parcours pro
+        a) trouver une présentation dynamique pour relater mon parcours pro (avec un fil rouge et des liens sur mon travaux, possibilité de réduire ou de dérouler le textes pour chacunes de expé)
         b) trouver une place pour les passions
-        c) faire une version de cette page imprimable (style CV)
+        c) faire une version de cette page imprimable (style CV) avec media print 
 
 */
 
@@ -64,6 +66,17 @@ body {
     height: 100%;
 }
 
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.vertical_ligne {
+    border-left: 2px solid rgba(255, 255, 255, 0.226);
+    margin: 2rem;
+}
+
         /* visibilité du contenu */
 @media screen and (max-width:770px) {
     .gros_blabla {
@@ -72,7 +85,6 @@ body {
     .petit_blabla {
         font-size: 1rem;
     }
-
 }
 
         /* Le texte  */
@@ -85,7 +97,6 @@ h1 {
 h2, h3 {
     margin: 1vw;
 }
-
 
 h2 {
     font-size: 3vw;
@@ -103,6 +114,10 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     text-align: justify;
+}
+
+.titrounets {
+    font-size: 1.5rem;
 }
 
         /* Bordures et couleurs */                      /* voir pour modifier le rendu plus tard en fonction du contenu*/
@@ -126,36 +141,32 @@ p {
     color: rgba(12, 143, 204, 0.548);
     font-family: fantasy;
     font-size: 2rem;
-
 }
 
 #titre_violet, #titre_violet a {
     color: rgba(132, 14, 228, 0.493);
     font-family: fantasy;
     font-size: 2rem;
-
 }
 
 #titre_rose, #titre_rose a {
     color: rgba(241, 19, 174, 0.507);
     font-family: fantasy;
     font-size: 2rem;
-
 }
         
         /* Flexbox */
 
 @media screen and (max-width:770px) {
-    .visuel, .realisations, .projets, .skills, .competences {
+    .visuel, .realisations, .projets, .skills, .competences, .linkedin_post {
         display: flex;
         flex-direction: column;
     }
 
-    .realisations, .bloc_presentation, .skills, .competences {
+    .realisations, .bloc_presentation, .skills, .competences, .linkedin_post {
         align-items: center;
         text-align: center;
     }
-
 }        
 
 
@@ -168,8 +179,7 @@ p {
         list-style-type: none;
     }
     
-    nav li
-    {
+    nav li {
         margin-right: 15px;
         color: rgba(180, 77, 206, 0.767); 
         font-family: fantasy;
@@ -236,6 +246,42 @@ p {
     }
 }
 
+        /* footer : linked'In */
+@media screen and (max-width:1023px) {
+    .linkedin_post {
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+    }
+    
+    .linkedin_post section {
+        width: 80%; 
+        margin: auto;
+    }
+    
+    .linkedin_post p:nth-child(3) {
+        text-align: right;
+    }
+    
+    #linkedin {
+        margin: auto;
+        box-shadow: 3px 3px 3px  black;
+    }
+}
+        /* footer (mentions légales et politique de conf */
+
+/* @media screen and (max-width:1023px) {
+    footer a:target {
+        
+    }
+
+} 
+
+a-t-on besoin du target pour les liens sur smartphone ou il est possible de cliquer avec le doigt?? 
+
+
+*/
+
 
     /*** Page accueil ***/
 
@@ -243,13 +289,13 @@ p {
 
 
 
-.accroche {
+.accroche, .linkedin_post  {
     color: rgba(255, 255, 255, 0.226); 
 
 }
 
 @media screen and (max-width:1023px) {
-    header {
+    header, .linkedin_post  {
         background: rgba(7, 7, 7, 0.877);
     }
 
@@ -280,13 +326,14 @@ p {
 .projets {
     width: 90%;
     margin-top: 5%;
-}
-
+    }
 }
 
 .projets p {
     padding: 2%;
 }
+
+
 
 
 
@@ -352,7 +399,6 @@ box compétence :
 
 .ma_licorne {
     background: rgba(7, 7, 7, 0.877);
-
 }
 
 /***** tablettes *****/
@@ -360,6 +406,7 @@ box compétence :
     /*** Mise en page générale ***/
 
         /* visibilité du contenu */
+
 @media screen and (max-width:1023px) {
     .gros_blabla {
         font-size: 1rem;
@@ -367,7 +414,6 @@ box compétence :
     .petit_blabla, .presentation_picture, .blabla_desktop {
         display: none;
     }
-
 }
 
         /* Flexbox */
@@ -428,7 +474,6 @@ box compétence :
         color: rgba(255, 255, 255, 0.226);
         padding: 0 5% 0 5%;
     }
-    
 }        
 
 
@@ -457,6 +502,24 @@ box compétence :
         display: none;
     }
 
+    .linkedin_post {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .linkedin_post section {
+        width: 45%;
+
+    }
+
+    .linkedin_post p:nth-child(3) {
+        text-align: right;
+    }
+
+    #linkedin {
+        margin: 2% 0 2% 0;
+        box-shadow: 3px 3px 3px  black;
+    }
 }
         
 
@@ -516,6 +579,7 @@ box compétence :
     .presentation_picture {
         margin: auto;
     }
+
     .PhotoCV {
         height: auto;
         min-width: 150px;
@@ -525,13 +589,12 @@ box compétence :
     .header_presentation {
         margin: auto;
     }
-
 } 
 
-    /*** En-tête et footer ***/
+    /*** En-tête, footer et contenu licorne ***/
 
 @media screen and (min-width:1024px) {
-    .accueil, .visuel, .ma_licorne, .titre_presentation, .envoi_formulaire  {
+    .accueil, .visuel, .ma_licorne, .titre_presentation, .envoi_formulaire, .linkedin_post  {
         background: linear-gradient(-45deg, #888888, #5c5c5c, #353535, #050505);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
@@ -547,8 +610,7 @@ box compétence :
             100% {
                 background-position: 0% 50%;
             }
-    }
-    
+    } 
 }
 
     /* menu */
@@ -561,6 +623,7 @@ box compétence :
     nav ul {
         display: flex;
     }
+
     nav ul li {
         list-style-type: none;
     }
@@ -582,19 +645,38 @@ box compétence :
     .fermer_menu {
         display: none;
     }
-
 }
     
         /* Dynamique des liens */
 
-nav a:hover, .projets a:hover, .lien_CV a:hover {
+nav a:hover, .projets a:hover, .lien_CV a:hover, .contact a:hover {
     color: rgba(137, 43, 226, 0.596);
     border-left: 0.5px groove rgb(92, 4, 173);
     font-size: 105%;
 }
 
-#projet_bleu a, .lien_CV a {
+#projet_bleu a, .lien_CV a, .contact a {
     color: rgb(180, 77, 206, 0.767);
+}
+
+footer a:hover {
+    color: rgba(137, 43, 226, 0.596);
+    border-left: 0.5px groove rgb(92, 4, 173);
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.226);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+.contact {
+    font-size: 100%;
+    font-family: fantasy;
+}
+
+.contact:active {
+    color: rgba(137, 43, 226, 0.596);;
 }
   
 
@@ -628,6 +710,7 @@ form {
     font-family: fantasy;
     font-size: 2.5rem;
 }
+
 legend {
     font-size: 2rem;
     font-family: fantasy;
@@ -649,7 +732,6 @@ legend {
 .header_form h1 {
     color: rgba(137, 43, 226, 0.596);
 }
-
 
 .envoi_formulaire {
     padding: 2rem;
