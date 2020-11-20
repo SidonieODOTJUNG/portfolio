@@ -78,12 +78,15 @@ footer {
 }
 
         /* visibilité du contenu */
-@media screen and (max-width:770px) {
+@media screen and (max-width:1023px) {
     .gros_blabla {
         display: none;
     }
     .petit_blabla {
-        font-size: 1rem;
+        font-size: 1.3rem;
+    }
+    .CVanime {
+        width: 100%;
     }
 }
 
@@ -407,11 +410,8 @@ box compétence :
 
         /* visibilité du contenu */
 
-@media screen and (max-width:1023px) {
-    .gros_blabla {
-        font-size: 1rem;
-    }
-    .petit_blabla, .presentation_picture, .blabla_desktop {
+@media screen and (max-width:1023px) and (min-width: 771px) {
+    .presentation_picture, .blabla_desktop {
         display: none;
     }
 }
