@@ -91,14 +91,14 @@ footer {
 }
 
         /* Le texte  */
-h1 {
-    font-family: fantasy;
-    font-size: 4vw;
+
+h1, h2, h3 {
     margin: 1vw;
 }
 
-h2, h3 {
-    margin: 1vw;
+h1 {
+    font-family: fantasy;
+    font-size: 4vw;
 }
 
 h2 {
